@@ -1,7 +1,7 @@
-FROM python:3.12.0a1-buster
+FROM python:3.12.0
 RUN apt-get update &&\
-    /usr/local/bin/python3 -m pip install --upgrade pip &&\
-    /usr/local/bin/python3 -m pip install --upgrade setuptools &&\
+    python3 -m pip install --upgrade pip &&\
+    python3 -m pip install --upgrade setuptools &&\
     adduser myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 ENV FLASK_APP=main.py
